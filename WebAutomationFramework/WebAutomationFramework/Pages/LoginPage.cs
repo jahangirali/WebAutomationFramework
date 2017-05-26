@@ -19,7 +19,7 @@ namespace WebAutomationFramework.Pages
 
         public void EmailAddress()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             var emailAddressField = Driver.FindElement(By.Id("signin-username"));
             emailAddressField.SendKeys("jahangir.ali@easyjet.com");
         }

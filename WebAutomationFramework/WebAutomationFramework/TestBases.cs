@@ -29,11 +29,11 @@ namespace WebAutomationFramework.Pages
 
         }
 
-        [OneTimeTearDown]
-        public void TestTearDown()
-        {
-            driver.Quit();
-        }
+        //[OneTimeTearDown]
+        //public void TestTearDown()
+        //{
+        //    driver.Quit();
+        //}
     }
 }
 

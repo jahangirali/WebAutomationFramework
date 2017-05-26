@@ -121,18 +121,18 @@ namespace WebAutomationFramework.Tests
             // /////////////////
             //09 Login Page
             // ////////////////
-            //var coPage = new CheckoutPage(driver);
+            var coPage = new CheckoutPage(driver);
 
-            //coPage.TravelReasonBusiness();
+            coPage.TravelReasonBusiness();
             //// coPage.TravelReasonsLeisure();
 
-            //coPage.TitleField();
-            //coPage.FirstNameField();
-            //coPage.LastNameField();
-            //coPage.AgeField();
+            coPage.TitleField();
+            coPage.FirstNameField();
+            coPage.LastNameField();
+            coPage.AgeField();
             //coPage.RequestSpecialAssistanceClick();
             //coPage.BlindClick();
-            //coPage.ContinueButtonClick();
+            coPage.ContinueButtonClick();
 
         }
 
