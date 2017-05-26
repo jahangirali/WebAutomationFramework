@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Pages\InsurancePage.cs" />
     <Compile Include="TestBases.cs" />
     <Compile Include="Pages\CarHirePage.cs" />
     <Compile Include="Pages\CheckoutPage.cs" />
@@ -76,10 +77,9 @@
     <Compile Include="Pages\TravelExtras.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\SearchPodPage.cs" />
+    <Compile Include="Tests\SearchPodTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
