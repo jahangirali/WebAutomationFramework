@@ -8,7 +8,7 @@ using OpenQA.Selenium;
 
 namespace WebAutomationFramework.Pages
 {
-    class TravelExtras
+    class TravelExtrasPage
     {
 
         private IWebDriver Driver { get; set; }
