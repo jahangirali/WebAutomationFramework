@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using OpenQA.Selenium;
+
+namespace WebAutomationFramework.Pages
+{
+    class PickFlightsPage
+    {
+
+        private IWebDriver Driver { get; set; }
+
+        public PickFlightsPage(IWebDriver driver)
+        {
+            Driver = driver;
+        }
+
+        public void ThreeWeekView()
+        {
+            var threeWeekViewLink = Driver.FindElement(By.ClassName("banner-gap"));
+        }
+
+        public void FlightsGridClick()
+        {
+            var flightsGridClick = Driver.FindElement(By.ClassName("banner-gap"));
+            flightsGridClick.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(3));
+        }
+
+        public void ContinueButtonClick()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-class*=IsALink]"));
+            continueButtonClick.Click();
+
+        }
+
+        public void ChangeSearchClick()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            var changeSearchClick = Driver.FindElement(By.CssSelector("button[ng-click*=ShowChangeSearch]"));
+            changeSearchClick.Click();
+
+        }
+
+        public void HideSearchClick()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            var hideSearchClick = Driver.FindElement(By.CssSelector("button[ng-click*=HideChangeSearch]"));
+            hideSearchClick.Click();
+        }
+
+        public void RadioButtonCreditCardClick()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            var radioButtonCreditCard = Driver.FindElement(By.Id("credit-radio"));
+            radioButtonCreditCard.Click();
+        }
+    }
+}
+    
+

@@ -65,12 +65,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Pages\BaseTest.cs" />
+    <Compile Include="TestBases.cs" />
     <Compile Include="Pages\CarHirePage.cs" />
     <Compile Include="Pages\CheckoutPage.cs" />
     <Compile Include="Pages\HoldLuggagePage.cs" />
     <Compile Include="Pages\HotelsPage.cs" />
-    <Compile Include="Pages\PickFlights.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\PickFlightsPage.cs" />
     <Compile Include="Pages\SeatSelectionPage.cs" />
     <Compile Include="Pages\TravelExtras.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
