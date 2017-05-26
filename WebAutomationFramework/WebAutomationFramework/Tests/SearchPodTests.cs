@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using WebAutomationFramework.Pages;
 
@@ -120,18 +121,18 @@ namespace WebAutomationFramework.Tests
             // /////////////////
             //09 Login Page
             // ////////////////
-            var coPage = new CheckoutPage(driver);
+            //var coPage = new CheckoutPage(driver);
 
-            coPage.TravelReasonBusiness();
-            // coPage.TravelReasonsLeisure();
+            //coPage.TravelReasonBusiness();
+            //// coPage.TravelReasonsLeisure();
 
-            coPage.TitleField();
-            coPage.FirstNameField();
-            coPage.LastNameField();
-            coPage.AgeField();
-            coPage.RequestSpecialAssistanceClick();
-            coPage.BlindClick();
-            coPage.ContinueButtonClick();
+            //coPage.TitleField();
+            //coPage.FirstNameField();
+            //coPage.LastNameField();
+            //coPage.AgeField();
+            //coPage.RequestSpecialAssistanceClick();
+            //coPage.BlindClick();
+            //coPage.ContinueButtonClick();
 
         }
 
@@ -211,6 +212,19 @@ namespace WebAutomationFramework.Tests
 
             spPage.CheckBoxClick();
             //spPage.HotelsTabClick();
+        }
+
+        [Test]
+        public void Step01SearchPodTests()
+        {
+            var spPage = new SearchPodPage(driver);
+
+            var closeDrawer = driver.FindElement(By.Id("close-drawer-link"));
+            closeDrawer.Click();
+
+            spPage.CheckBoxClick();
+            spPage.CheckBoxClick();
+
         }
 
 

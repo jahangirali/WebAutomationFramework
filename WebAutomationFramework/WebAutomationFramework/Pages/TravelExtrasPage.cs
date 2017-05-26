@@ -13,7 +13,7 @@ namespace WebAutomationFramework.Pages
 
         private IWebDriver Driver { get; set; }
 
-        public void TravelExtrasPage(IWebDriver driver)
+        public TravelExtrasPage(IWebDriver driver)
         {
             Driver = driver;
         }

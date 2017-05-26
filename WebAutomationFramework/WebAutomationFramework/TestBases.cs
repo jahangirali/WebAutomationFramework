@@ -9,7 +9,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace WebAutomationFramework.Pages
 {
-    class TestBases
+    public class TestBases
     {
         public IWebDriver driver;
         String url = "https://easyjet.com/en/";
@@ -29,11 +29,11 @@ namespace WebAutomationFramework.Pages
 
         }
 
-        //[OneTimeTearDown]
-        //public void TestTearDown()
-        //{
-        //    driver.Quit();
-        //}
+        [OneTimeTearDown]
+        public void TestTearDown()
+        {
+            driver.Quit();
+        }
     }
 }
 
