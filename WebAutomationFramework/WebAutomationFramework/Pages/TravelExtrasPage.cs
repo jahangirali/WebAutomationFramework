@@ -34,9 +34,10 @@ namespace WebAutomationFramework.Pages
 
         public void TakeMeToInsuranceSelectionCloseClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Thread.Sleep(TimeSpan.FromSeconds(3));
             //var takeMeToInsuranceSelectionCloseClick = Driver.FindElement(By.ClassName("close-icon"));
-            var takeMeToInsuranceSelectionCloseClick = Driver.FindElement(By.CssSelector("class[ng-if*=SmartMessageSettings.CloseIconUrl"));
+            // var takeMeToInsuranceSelectionCloseClick = Driver.FindElement(By.CssSelector("class[ng-if*=SmartMessageSettings.CloseIconUrl]"));
+            var takeMeToInsuranceSelectionCloseClick = Driver.FindElement(By.CssSelector("class[ng-if*=SmartMessageSettings.CloseIconUrl]"));
             takeMeToInsuranceSelectionCloseClick.Click();
 
         }

@@ -52,13 +52,13 @@ namespace WebAutomationFramework.Pages
             var ageField = Driver.FindElement(By.Id("age-dropdown-adult-1"));
             ageField.Click();
             ageField.SendKeys("18+"+Keys.Tab);
-            
+            Thread.Sleep(TimeSpan.FromSeconds(1));
         }
 
         public void ContinueButtonClick()
         {
             Thread.Sleep(TimeSpan.FromSeconds(2));
-            var continueButtonClick = Driver.FindElement(By.CssSelector("button[class*=button]"));
+            var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-click*=Continue]"));
             //By.CssSelector("button[ng-click*=SkipButtonHandler]"));
             continueButtonClick.Click();
             
