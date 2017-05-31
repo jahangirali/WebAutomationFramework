@@ -20,7 +20,8 @@ namespace WebAutomationFramework.Pages
 
         public void SkipButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(3));
+
+            Wait.WaitForElement(Driver, By.CssSelector("button[class*=skip-link]"));
             var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*=skip-link]"));
             skipButtonClick.Click();
         }

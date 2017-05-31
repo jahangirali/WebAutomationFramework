@@ -32,24 +32,23 @@ namespace WebAutomationFramework
 
         public void OriginFieldClick()
         {
+            Wait.WaitForElement(Driver, By.CssSelector("input[id^= origin-]"));
             var originTextField = Driver.FindElement(By.CssSelector("input[id^= origin-]"));
             originTextField.Click();
         }
 
         public void OriginFieldSendKeys(String originAirport)
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.CssSelector("input[id^= origin-]"));
             var originTextField = Driver.FindElement(By.CssSelector("input[id^= origin-]"));
             originTextField.SendKeys(originAirport + Keys.Enter);
-
         }
 
         public void DestinationFieldClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.CssSelector("input[id^= origin-]"));
             var destinationTestField = Driver.FindElement(By.CssSelector("input[id^=destination-]"));
             destinationTestField.Click();
-
         }
 
         public void DestinationFieldSendKeys(String destinationAirport)
@@ -65,19 +64,20 @@ namespace WebAutomationFramework
         }
         public void OriginCalendarDateSelect()
         {
-            var originDate = Driver.FindElement(By.CssSelector($"div[data-date='2017-05-31'] a"));
+            var originDateInsert = DateTime.UtcNow.AddDays(7).ToString("yyyy-MM-dd");
+            var originDate = Driver.FindElement(By.CssSelector($"div[data-date='{originDateInsert}'] a"));
             originDate.Click();
         }
         public void ShowFlightsButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(2));
+            Wait.WaitForElement(Driver, By.CssSelector("button[class*= search-submit]"));
             var showFlights = Driver.FindElement(By.CssSelector("button[class*= search-submit]"));
             showFlights.Click();
         }
 
         public void HotelsTabClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.CssSelector("class[title*=Hotels]"));
             var hotelsTabClick = Driver.FindElement(By.CssSelector("class[title*=Hotels]"));
             hotelsTabClick.Click();
         }

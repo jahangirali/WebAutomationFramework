@@ -25,37 +25,36 @@ namespace WebAutomationFramework.Pages
 
         public void FlightsGridClick()
         {
+            Wait.WaitForElement(Driver, By.ClassName("banner-gap"));
             var flightsGridClick = Driver.FindElement(By.ClassName("banner-gap"));
-            flightsGridClick.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(3));
+            flightsGridClick.Click();            
         }
 
         public void ContinueButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-class*=IsALink]"));
+            Wait.WaitForElement(Driver, By.CssSelector("button[ng-if*=ShowContinueButton]"));
+            var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-if*=ShowContinueButton]"));
+            //var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-class*=IsALink]"));
             continueButtonClick.Click();
-
         }
 
         public void ChangeSearchClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.CssSelector("button[ng-click*=ShowChangeSearch]"));
             var changeSearchClick = Driver.FindElement(By.CssSelector("button[ng-click*=ShowChangeSearch]"));
             changeSearchClick.Click();
-
         }
 
         public void HideSearchClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.CssSelector("button[ng-click*=HideChangeSearch]"));
             var hideSearchClick = Driver.FindElement(By.CssSelector("button[ng-click*=HideChangeSearch]"));
             hideSearchClick.Click();
         }
 
         public void RadioButtonCreditCardClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.Id("credit-radio"));
             var radioButtonCreditCard = Driver.FindElement(By.Id("credit-radio"));
             radioButtonCreditCard.Click();
         }

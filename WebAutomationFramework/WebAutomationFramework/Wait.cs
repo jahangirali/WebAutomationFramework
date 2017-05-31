@@ -8,29 +8,18 @@ using OpenQA.Selenium.Support.UI;
 
 namespace WebAutomationFramework
 {
-    class Wait
+    public static class Wait
     {
-        private IWebDriver Driver { get; set; }
-
-        public Wait(IWebDriver driver)
+        public static void WaitForElement(IWebDriver driver, By by)
         {
-            Driver = driver;
-            
+           WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));          
+           wait.Until(ExpectedConditions.ElementIsVisible(by));            
         }
 
-        public void WaitForElement()
+        public static void WaitForDrawToClose(IWebDriver driver)
         {
-            WebDriverWait wait = new WebDriverWait(driver, 30);
-            //Thread.Sleep(TimeSpan.FromSeconds(3));
-            //var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*=skip-link]"));
-            //skipButtonClick.Click();
-
-            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.CssSelector("skipButtonClick")));
-
-            //    Thread.Sleep(TimeSpan.FromSeconds(3));
-            //var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*=skip-link]"));
-            
-
+           WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+           wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[class=drawer drawer-angular anim-slide-rtr ng-hide]")));
         }
     }
 }
