@@ -34,7 +34,6 @@ namespace WebAutomationFramework.Pages
         {
             Wait.WaitForElement(Driver, By.CssSelector("button[ng-if*=ShowContinueButton]"));
             var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-if*=ShowContinueButton]"));
-            //var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-class*=IsALink]"));
             continueButtonClick.Click();
         }
 

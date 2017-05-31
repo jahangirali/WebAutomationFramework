@@ -20,35 +20,35 @@ namespace WebAutomationFramework.Pages
 
         public void AddHoldLuggageClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.CssSelector("input[ng-click*=AddBagIfLimitNotReached]"));
             var addHoldLuggageClick = Driver.FindElement(By.CssSelector("input[ng-click*=AddBagIfLimitNotReached]"));
             addHoldLuggageClick.Click();
         }
 
         public void HoldLuggageSkipButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.ClassName("class[*=skip-link]"));
             var holdLuggageSkipButtonClick = Driver.FindElement(By.ClassName("class[*=skip-link]"));
             holdLuggageSkipButtonClick.Click();
         }
 
         public void HoldLuggageInfoButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.ClassName("info-icon"));
             var holdLuggageInfoButtonClick = Driver.FindElement(By.ClassName("info-icon"));
             holdLuggageInfoButtonClick.Click();
         }
 
         public void HoldLuggageInfoCloseDraw()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.ClassName("back-button"));
             var holdLuggageInfoCloseDraw = Driver.FindElement(By.ClassName("back-button"));
             holdLuggageInfoCloseDraw.Click();
             //close-drawer-link
         }
         public void ContinueButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.CssSelector("button[ng-class*=IsALink]"));
             var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-class*=IsALink]"));
             continueButtonClick.Click();
 

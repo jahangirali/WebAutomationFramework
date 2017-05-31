@@ -96,6 +96,7 @@ namespace WebAutomationFramework.Tests
             HotelsPage hPage = new HotelsPage(driver);
 
             //hPage.ViewRoomsButtonClick();
+            hPage.CheckOnHotelsPage();
             hPage.InfoButtonClick();
             hPage.CloseDrawClick();
             hPage.SkipButtonClick();

@@ -20,32 +20,37 @@ namespace WebAutomationFramework.Pages
 
         public void SkipButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*=skip-link]"));
-
-            //("input[ng-click*=AddBagIfLimitNotReached]"));
+            Wait.WaitForElement(Driver, By.CssSelector("button[class*='skip-link']"));
+            var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*='skip-link']"));
             skipButtonClick.Click();
         }
 
         public void InfoButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.ClassName("info-icon"));
             var InfoButtonClick = Driver.FindElement(By.ClassName("info-icon"));
             InfoButtonClick.Click();
         }
 
         public void ViewRoomsButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            var viewRoomsButtonClick = Driver.FindElement(By.ClassName("class[class*=button hotel"));
+            Wait.WaitForElement(Driver, By.ClassName("class[class*='button hotel']"));
+            var viewRoomsButtonClick = Driver.FindElement(By.ClassName("class[class*='button hotel']"));
             viewRoomsButtonClick.Click();
         }
 
         public void CloseDrawClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Wait.WaitForElement(Driver, By.Id("close-drawer-link"));
             var closeDrawClick = Driver.FindElement(By.Id("close-drawer-link"));
             closeDrawClick.Click();
+        }
+
+        public void CheckOnHotelsPage()
+        {
+            Wait.WaitForElement(Driver, By.CssSelector("button[title='Load more']"));
+            var checkOnHotelsPage = Driver.FindElement(By.CssSelector("button[title='Load more']"));
+            checkOnHotelsPage.Displayed.Equals(true);
         }
     }
 }

@@ -20,24 +20,20 @@ namespace WebAutomationFramework.Pages
 
         public void SkipButtonClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(2));
+            Wait.WaitForElement(Driver, By.CssSelector("button[class*=skip-link]"));
             var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*=skip-link]"));
             skipButtonClick.Click();
         }
 
         public void AddInsuranceCoverClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(2));
+            Wait.WaitForElement(Driver, By.CssSelector("panel[class*=extra-change]"));
             var addInsuranceCoverClick = Driver.FindElement(By.CssSelector("panel[class*=extra-change]"));
             addInsuranceCoverClick.Click();
         }
 
         public void TakeMeToInsuranceSelectionCloseClick()
         {
-
-            //Thread.Sleep(TimeSpan.FromSeconds(3));
-            //var takeMeToInsuranceSelectionCloseClick = Driver.FindElement(By.ClassName("close-icon"));
-            // var takeMeToInsuranceSelectionCloseClick = Driver.FindElement(By.CssSelector("class[ng-if*=SmartMessageSettings.CloseIconUrl]"));
             Wait.WaitForElement(Driver, By.CssSelector("class[ng-if*=SmartMessageSettings.CloseIconUrl]"));
             var takeMeToInsuranceSelectionCloseClick = Driver.FindElement(By.CssSelector("class[ng-if*=SmartMessageSettings.CloseIconUrl]"));
             takeMeToInsuranceSelectionCloseClick.Click();

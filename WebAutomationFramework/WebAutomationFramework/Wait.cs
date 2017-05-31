@@ -13,13 +13,13 @@ namespace WebAutomationFramework
         public static void WaitForElement(IWebDriver driver, By by)
         {
            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));          
-           wait.Until(ExpectedConditions.ElementIsVisible(by));            
+           wait.Until(ExpectedConditions.ElementToBeClickable(by));            
         }
 
         public static void WaitForDrawToClose(IWebDriver driver)
         {
            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-           wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[class=drawer drawer-angular anim-slide-rtr ng-hide]")));
+           wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div[class='drawer drawer-angular anim-slide-rtr ng-hide']")));
         }
     }
 }

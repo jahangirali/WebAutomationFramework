@@ -19,7 +19,7 @@ namespace WebAutomationFramework.Pages
 
         public void InfoIconClick()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(3));
+            Wait.WaitForElement(Driver, By.ClassName("info-icon"));
             var infoIcon = Driver.FindElement(By.ClassName("info-icon"));
             infoIcon.Click();
         }
@@ -27,9 +27,6 @@ namespace WebAutomationFramework.Pages
         public void EasyJetPlusDrawLinkClick()
         {
             Wait.WaitForElement(Driver, By.XPath("//a[text()='easyJet Plus'] "));
-            //var easyJetPlusDrawLink = Driver.FindElement(By.ClassName("navigation-link"));
-            //var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-class*=IsALink]"));
-            //continueButtonClick.Click();
             var easyJetPlusDrawLink = Driver.FindElement(By.XPath("//a[text()='easyJet Plus'] "));
             easyJetPlusDrawLink.Click();
         }
@@ -39,11 +36,11 @@ namespace WebAutomationFramework.Pages
             Wait.WaitForElement(Driver, By.Id("close-drawer-link"));
             var selectSeatDrawClose = Driver.FindElement(By.Id("close-drawer-link"));
             selectSeatDrawClose.Click();
+            Wait.WaitForDrawToClose(Driver);
         }
 
         public void SelectSeatSkipClick()
-        {
-            Thread.Sleep(5);
+        {            
             Wait.WaitForElement(Driver, By.CssSelector("button[class*=button-link]"));
             var selectSeatSkipClick = Driver.FindElement(By.CssSelector("button[class*=button-link]"));
             selectSeatSkipClick.Click();
