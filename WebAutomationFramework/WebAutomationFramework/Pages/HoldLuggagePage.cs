@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using NUnit.Framework;
 using OpenQA.Selenium;
 
 namespace WebAutomationFramework.Pages
@@ -20,22 +21,26 @@ namespace WebAutomationFramework.Pages
 
         public void AddHoldLuggageClick()
         {
-            Wait.WaitForElement(Driver, By.CssSelector("input[ng-click*=AddBagIfLimitNotReached]"));
-            var addHoldLuggageClick = Driver.FindElement(By.CssSelector("input[ng-click*=AddBagIfLimitNotReached]"));
+            //Wait.WaitForElement(Driver, By.CssSelector("input[ng-class*='HasReachedMaximumBaggageAllowance']"));
+            //var addHoldLuggageClick = Driver.FindElement(By.CssSelector("input[ng-class*='HasReachedMaximumBaggageAllowance']"));
+            Wait.WaitForElement(Driver, By.CssSelector("input[ng-click*='bagOption.Bag']:last-child"));
+            
+            var addHoldLuggageClick = Driver.FindElement(By.CssSelector("input[ng-click*='bagOption.Bag']:last-child"));
+            Assert.That(addHoldLuggageClick.Displayed, Is.True);
             addHoldLuggageClick.Click();
         }
 
         public void HoldLuggageSkipButtonClick()
         {
-            Wait.WaitForElement(Driver, By.ClassName("class[*=skip-link]"));
+            //Wait.WaitForElement(Driver, By.ClassName("class[*=skip-link]"));
             var holdLuggageSkipButtonClick = Driver.FindElement(By.ClassName("class[*=skip-link]"));
             holdLuggageSkipButtonClick.Click();
         }
 
         public void HoldLuggageInfoButtonClick()
         {
-            Wait.WaitForElement(Driver, By.ClassName("info-icon"));
-            var holdLuggageInfoButtonClick = Driver.FindElement(By.ClassName("info-icon"));
+            Wait.WaitForElement(Driver, By.CssSelector("a[ng-click*='DoInfoIconClick']"));
+            var holdLuggageInfoButtonClick = Driver.FindElement(By.CssSelector("a[ng-click*='DoInfoIconClick']"));
             holdLuggageInfoButtonClick.Click();
         }
 

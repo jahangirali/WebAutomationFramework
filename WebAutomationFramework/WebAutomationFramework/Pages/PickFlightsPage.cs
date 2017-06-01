@@ -25,7 +25,7 @@ namespace WebAutomationFramework.Pages
 
         public void FlightsGridClick()
         {
-            Wait.WaitForElement(Driver, By.ClassName("banner-gap"));
+            //Wait.WaitForElement(Driver, By.ClassName("banner-gap"));
             var flightsGridClick = Driver.FindElement(By.ClassName("banner-gap"));
             flightsGridClick.Click();            
         }
