@@ -72,10 +72,10 @@ namespace WebAutomationFramework.Tests
             //04 Hold Luggage Page
             // ////////////////
             HoldLuggagePage hlPage = new HoldLuggagePage(driver);
-            //hlPage.AddHoldLuggageClick();
-            //hlPage.HoldLuggageInfoButtonClick();
+            hlPage.AddHoldLuggageClick();
+            hlPage.HoldLuggageInfoButtonClick();
 
-            //hlPage.HoldLuggageInfoCloseDraw();
+            hlPage.HoldLuggageInfoCloseDraw();
 
             hlPage.AddHoldLuggageClick();
             hlPage.ContinueButtonClick();

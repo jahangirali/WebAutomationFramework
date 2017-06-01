@@ -46,10 +46,10 @@ namespace WebAutomationFramework.Pages
 
         public void HoldLuggageInfoCloseDraw()
         {
-            Wait.WaitForElement(Driver, By.ClassName("back-button"));
-            var holdLuggageInfoCloseDraw = Driver.FindElement(By.ClassName("back-button"));
+            Wait.WaitForElement(Driver, By.Id("close-drawer-link"));
+            var holdLuggageInfoCloseDraw = Driver.FindElement(By.Id("close-drawer-link"));
             holdLuggageInfoCloseDraw.Click();
-            //close-drawer-link
+            
         }
         public void ContinueButtonClick()
         {
