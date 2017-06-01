@@ -26,7 +26,6 @@ namespace WebAutomationFramework.Pages
             Wait.WaitForElement(Driver, By.CssSelector("input[ng-click*='bagOption.Bag']:last-child"));
             
             var addHoldLuggageClick = Driver.FindElement(By.CssSelector("input[ng-click*='bagOption.Bag']:last-child"));
-            Assert.That(addHoldLuggageClick.Displayed, Is.True);
             addHoldLuggageClick.Click();
         }
 
@@ -39,8 +38,10 @@ namespace WebAutomationFramework.Pages
 
         public void HoldLuggageInfoButtonClick()
         {
-            Wait.WaitForElement(Driver, By.CssSelector("a[ng-click*='DoInfoIconClick']"));
-            var holdLuggageInfoButtonClick = Driver.FindElement(By.CssSelector("a[ng-click*='DoInfoIconClick']"));
+            //Wait.WaitForElement(Driver, By.CssSelector("a[ng-click*='DoInfoIconClick']"));
+            //var holdLuggageInfoButtonClick = Driver.FindElement(By.CssSelector("a[ng-click*='DoInfoIconClick']"));
+            Wait.WaitForElement(Driver, By.ClassName("info-icon"));
+            var holdLuggageInfoButtonClick = Driver.FindElement(By.ClassName("info-icon"));
             holdLuggageInfoButtonClick.Click();
         }
 
@@ -53,8 +54,8 @@ namespace WebAutomationFramework.Pages
         }
         public void ContinueButtonClick()
         {
-            Wait.WaitForElement(Driver, By.CssSelector("button[ng-class*=IsALink]"));
-            var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-class*=IsALink]"));
+            Wait.WaitForElement(Driver, By.CssSelector("button[ng-if*='ShowContinueButton']"));
+            var continueButtonClick = Driver.FindElement(By.CssSelector("button[ng-if*='ShowContinueButton']"));
             continueButtonClick.Click();
 
         }
