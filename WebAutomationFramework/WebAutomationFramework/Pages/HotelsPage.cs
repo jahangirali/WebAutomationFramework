@@ -30,7 +30,7 @@ namespace WebAutomationFramework.Pages
         public void InfoButtonClick()
         {
             Wait.WaitForElement(Driver, By.CssSelector("class[*='info-icon']"));
-            var InfoButtonClick = Driver.FindElement(By.ClassName("info-icon"));
+            var InfoButtonClick = Driver.FindElement(By.CssSelector("class[*='info-icon']"));
             InfoButtonClick.Click();
         }
 

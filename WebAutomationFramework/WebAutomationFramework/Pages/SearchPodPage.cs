@@ -5,22 +5,24 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using WebAutomationFramework.Pages;
 
 namespace WebAutomationFramework
 {
-    class SearchPodPage
+    class SearchPodPage: BasePage
     {
         private IWebDriver Driver { get; set; }
+        private static By PageLocator = By.ClassName("checkbox");
 
-        public SearchPodPage(IWebDriver driver)
+        public SearchPodPage(IWebDriver driver) : base(driver, PageLocator)
         {
             Driver = driver;
+            Console.WriteLine("Search Pod Page has loaded");
         }
 
         public void CheckBoxClick()
         {
             var checkBox = Driver.FindElement(By.ClassName("checkbox"));
-            Console.WriteLine("On Search Pod Page");
             checkBox.Click();
 
         }
