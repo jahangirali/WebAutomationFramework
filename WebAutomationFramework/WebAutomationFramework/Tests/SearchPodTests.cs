@@ -95,7 +95,7 @@ namespace WebAutomationFramework.Tests
             HotelsPage hPage = new HotelsPage(driver);
 
             //hPage.ViewRoomsButtonClick();
-            hPage.CheckOnHotelsPage();
+            //hPage.CheckOnHotelsPage();
             hPage.InfoButtonClick();
             hPage.CloseDrawClick();
             hPage.SkipButtonClick();
@@ -104,7 +104,7 @@ namespace WebAutomationFramework.Tests
             // /////////////////
             //07 Car Hire
             // ////////////////
-
+            Thread.Sleep(5);
             var chPage = new CarHirePage(driver);
             chPage.SkipButtonClick();
 

@@ -20,6 +20,7 @@ namespace WebAutomationFramework.Pages
         public void TravelReasonBusiness()
         {
             Wait.WaitForElement(Driver, By.CssSelector("input[id*=reason-1]"));
+            Console.WriteLine("On Checkout Page");
             var travelReasonBusiness = Driver.FindElement(By.CssSelector("input[id*=reason-1]"));
             travelReasonBusiness.Click();
         }

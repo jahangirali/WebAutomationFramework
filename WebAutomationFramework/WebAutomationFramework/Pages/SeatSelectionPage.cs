@@ -21,6 +21,7 @@ namespace WebAutomationFramework.Pages
         {
             Wait.WaitForElement(Driver, By.ClassName("info-icon"));
             var infoIcon = Driver.FindElement(By.ClassName("info-icon"));
+            Console.WriteLine("On Seat Selection Page");
             infoIcon.Click();
         }
 

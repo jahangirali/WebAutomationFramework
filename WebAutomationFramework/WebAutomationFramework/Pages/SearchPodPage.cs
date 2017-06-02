@@ -20,6 +20,7 @@ namespace WebAutomationFramework
         public void CheckBoxClick()
         {
             var checkBox = Driver.FindElement(By.ClassName("checkbox"));
+            Console.WriteLine("On Search Pod Page");
             checkBox.Click();
 
         }

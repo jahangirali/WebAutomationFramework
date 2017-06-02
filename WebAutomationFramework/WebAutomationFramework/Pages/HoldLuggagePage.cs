@@ -24,7 +24,7 @@ namespace WebAutomationFramework.Pages
             //Wait.WaitForElement(Driver, By.CssSelector("input[ng-class*='HasReachedMaximumBaggageAllowance']"));
             //var addHoldLuggageClick = Driver.FindElement(By.CssSelector("input[ng-class*='HasReachedMaximumBaggageAllowance']"));
             Wait.WaitForElement(Driver, By.CssSelector("input[ng-click*='bagOption.Bag']:last-child"));
-            
+            Console.WriteLine("On Hold Luggage Page");
             var addHoldLuggageClick = Driver.FindElement(By.CssSelector("input[ng-click*='bagOption.Bag']:last-child"));
             addHoldLuggageClick.Click();
         }

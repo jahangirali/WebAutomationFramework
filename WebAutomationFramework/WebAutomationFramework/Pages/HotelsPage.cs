@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using NUnit.Framework;
 using OpenQA.Selenium;
 
 namespace WebAutomationFramework.Pages
@@ -20,14 +21,15 @@ namespace WebAutomationFramework.Pages
 
         public void SkipButtonClick()
         {
-            Wait.WaitForElement(Driver, By.CssSelector("button[class*='skip-link']"));
-            var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*='skip-link']"));
+            Wait.WaitForElement(Driver, By.CssSelector("button[class*=skip-link]"));
+            Console.WriteLine("Hotels Page");
+            var skipButtonClick = Driver.FindElement(By.CssSelector("button[class*=skip-link]"));
             skipButtonClick.Click();
         }
 
         public void InfoButtonClick()
         {
-            Wait.WaitForElement(Driver, By.ClassName("info-icon"));
+            Wait.WaitForElement(Driver, By.CssSelector("class[*='info-icon']"));
             var InfoButtonClick = Driver.FindElement(By.ClassName("info-icon"));
             InfoButtonClick.Click();
         }
@@ -50,7 +52,7 @@ namespace WebAutomationFramework.Pages
         {
             Wait.WaitForElement(Driver, By.CssSelector("button[title='Load more']"));
             var checkOnHotelsPage = Driver.FindElement(By.CssSelector("button[title='Load more']"));
-            checkOnHotelsPage.Displayed.Equals(true);
+            Assert.That(checkOnHotelsPage.Displayed, Is.True);
         }
     }
 }
